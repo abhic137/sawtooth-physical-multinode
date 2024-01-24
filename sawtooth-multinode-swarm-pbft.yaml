@@ -59,6 +59,10 @@ services:
 
   intkey-tp-3:
     image: hyperledger/sawtooth-intkey-tp-python:chime
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-intkey-tp-python-default-3
     expose:
       - 4004
@@ -67,6 +71,10 @@ services:
 
   intkey-tp-4:
     image: hyperledger/sawtooth-intkey-tp-python:chime
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-intkey-tp-python-default-4
     expose:
       - 4004
@@ -77,6 +85,10 @@ services:
 
   rest-api-0:
     image: hyperledger/sawtooth-rest-api:chime
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-rest-api-default-0
     expose:
       - 8008
@@ -90,6 +102,10 @@ services:
 
   rest-api-1:
     image: hyperledger/sawtooth-rest-api:chime
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-rest-api-default-1
     expose:
       - 8008
@@ -103,6 +119,11 @@ services:
 
   rest-api-2:
     image: hyperledger/sawtooth-rest-api:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-rest-api-default-2
     expose:
       - 8008
@@ -116,6 +137,11 @@ services:
 
   rest-api-3:
     image: hyperledger/sawtooth-rest-api:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-rest-api-default-3
     expose:
       - 8008
@@ -129,6 +155,11 @@ services:
 
   rest-api-4:
     image: hyperledger/sawtooth-rest-api:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-rest-api-default-4
     expose:
       - 8008
@@ -144,6 +175,11 @@ services:
 
   settings-tp-0:
     image: hyperledger/sawtooth-settings-tp:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-settings-tp-default-0
     expose:
       - 4004
@@ -152,6 +188,11 @@ services:
 
   settings-tp-1:
     image: hyperledger/sawtooth-settings-tp:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-settings-tp-default-1
     expose:
       - 4004
@@ -160,6 +201,11 @@ services:
 
   settings-tp-2:
     image: hyperledger/sawtooth-settings-tp:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-settings-tp-default-2
     expose:
       - 4004
@@ -168,6 +214,11 @@ services:
 
   settings-tp-3:
     image: hyperledger/sawtooth-settings-tp:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-settings-tp-default-3
     expose:
       - 4004
@@ -176,6 +227,11 @@ services:
 
   settings-tp-4:
     image: hyperledger/sawtooth-settings-tp:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-settings-tp-default-4
     expose:
       - 4004
@@ -186,6 +242,11 @@ services:
 
   shell:
     image: hyperledger/sawtooth-shell:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-shell-default
     volumes:
       - pbft-shared:/pbft-shared
@@ -200,6 +261,11 @@ services:
 
   validator-0:
     image: hyperledger/sawtooth-validator:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-validator-default-0
     expose:
       - 4004
@@ -255,6 +321,11 @@ services:
 
   validator-1:
     image: hyperledger/sawtooth-validator:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-validator-default-1
     expose:
       - 4004
@@ -288,6 +359,11 @@ services:
 
   validator-2:
     image: hyperledger/sawtooth-validator:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-validator-default-2
     expose:
       - 4004
@@ -322,6 +398,11 @@ services:
 
   validator-3:
     image: hyperledger/sawtooth-validator:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-validator-default-3
     expose:
       - 4004
@@ -357,6 +438,11 @@ services:
 
   validator-4:
     image: hyperledger/sawtooth-validator:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-validator-default-4
     expose:
       - 4004
@@ -395,30 +481,55 @@ services:
 
   pbft-0:
     image: hyperledger/sawtooth-pbft-engine:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-pbft-engine-default-0
     command: pbft-engine -vv --connect tcp://validator-0:5050
     stop_signal: SIGKILL
 
   pbft-1:
     image: hyperledger/sawtooth-pbft-engine:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-pbft-engine-default-1
     command: pbft-engine -vv --connect tcp://validator-1:5050
     stop_signal: SIGKILL
 
   pbft-2:
     image: hyperledger/sawtooth-pbft-engine:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-pbft-engine-default-2
     command: pbft-engine -vv --connect tcp://validator-2:5050
     stop_signal: SIGKILL
 
   pbft-3:
     image: hyperledger/sawtooth-pbft-engine:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-pbft-engine-default-3
     command: pbft-engine -vv --connect tcp://validator-3:5050
     stop_signal: SIGKILL
 
   pbft-4:
     image: hyperledger/sawtooth-pbft-engine:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-pbft-engine-default-4
     command: pbft-engine -vv --connect tcp://validator-4:5050
     stop_signal: SIGKILL
@@ -427,6 +538,11 @@ services:
 
   xo-tp-0:
     image: hyperledger/sawtooth-xo-tp-python:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-xo-tp-python-default-0
     expose:
       - 4004
@@ -435,6 +551,11 @@ services:
 
   xo-tp-1:
     image: hyperledger/sawtooth-xo-tp-python:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-xo-tp-python-default-1
     expose:
       - 4004
@@ -443,6 +564,11 @@ services:
 
   xo-tp-2:
     image: hyperledger/sawtooth-xo-tp-python:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-xo-tp-python-default-2
     expose:
       - 4004
@@ -451,6 +577,11 @@ services:
 
   xo-tp-3:
     image: hyperledger/sawtooth-xo-tp-python:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-xo-tp-python-default-3
     expose:
       - 4004
@@ -459,6 +590,11 @@ services:
 
   xo-tp-4:
     image: hyperledger/sawtooth-xo-tp-python:chime
+
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
     container_name: sawtooth-xo-tp-python-default-4
     expose:
       - 4004
