@@ -50,7 +50,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-intkey-tp-python-default-2
     expose:
       - 4004
@@ -62,7 +62,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-intkey-tp-python-default-3
     expose:
       - 4004
@@ -74,7 +74,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-intkey-tp-python-default-4
     expose:
       - 4004
@@ -123,7 +123,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-rest-api-default-2
     expose:
       - 8008
@@ -141,7 +141,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-rest-api-default-3
     expose:
       - 8008
@@ -159,7 +159,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-rest-api-default-4
     expose:
       - 8008
@@ -205,7 +205,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-settings-tp-default-2
     expose:
       - 4004
@@ -218,7 +218,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-settings-tp-default-3
     expose:
       - 4004
@@ -231,7 +231,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-settings-tp-default-4
     expose:
       - 4004
@@ -363,7 +363,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-validator-default-2
     expose:
       - 4004
@@ -402,7 +402,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-validator-default-3
     expose:
       - 4004
@@ -442,7 +442,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-validator-default-4
     expose:
       - 4004
@@ -507,7 +507,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-pbft-engine-default-2
     command: pbft-engine -vv --connect tcp://validator-2:5050
     stop_signal: SIGKILL
@@ -518,7 +518,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-pbft-engine-default-3
     command: pbft-engine -vv --connect tcp://validator-3:5050
     stop_signal: SIGKILL
@@ -529,7 +529,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-pbft-engine-default-4
     command: pbft-engine -vv --connect tcp://validator-4:5050
     stop_signal: SIGKILL
@@ -568,7 +568,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-xo-tp-python-default-2
     expose:
       - 4004
@@ -581,7 +581,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-xo-tp-python-default-3
     expose:
       - 4004
@@ -594,7 +594,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node1
+          - node.hostname == node2
     container_name: sawtooth-xo-tp-python-default-4
     expose:
       - 4004
