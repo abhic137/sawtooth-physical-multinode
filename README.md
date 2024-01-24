@@ -61,3 +61,22 @@ Replace `<SERVICE-NAME>` and `<NUMBER-OF-REPLICAS>` with your service name and t
 - Use Swarm Visualizer or Portainer for a graphical representation of your Swarm.
 
 Keep in mind that this is a basic setup. Depending on your needs, you might want to configure security, networking, and other aspects of your Swarm. Refer to the official Docker documentation for more details: [Docker Swarm Mode](https://docs.docker.com/engine/swarm/).
+To bring down a Docker Swarm stack and stop all the services defined in your Docker Compose file, you can use the following command:
+
+```bash
+docker stack rm <STACK-NAME>
+```
+
+Replace `<STACK-NAME>` with the actual name you used when deploying the stack.
+
+This command removes the specified stack, which will stop and remove all the services associated with that stack. Docker Swarm will then take care of stopping and removing the containers on each node.
+
+Additionally, if you want to leave the Swarm after bringing down the stack, you can use the following command on the manager node:
+
+```bash
+docker swarm leave --force
+```
+
+This command forcefully leaves the Docker Swarm on the manager node.
+
+Keep in mind that these commands will only stop and remove the services and containers associated with the specified stack. If you want to completely uninstall Docker from a node, you'll need to follow the appropriate steps for your operating system.
