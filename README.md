@@ -55,7 +55,32 @@ docker service scale <SERVICE-NAME>=<NUMBER-OF-REPLICAS>
 ```
 
 Replace `<SERVICE-NAME>` and `<NUMBER-OF-REPLICAS>` with your service name and the desired number of replicas.
+## To view the nodes
+To check the number of nodes that have joined a Docker Swarm using the join token, you can run the following command on the manager node where you initially initialized the Swarm:
 
+```bash
+docker node ls
+```
+
+This command will display a list of all nodes in the Swarm along with their status, availability, and other information. The "NODE ID" column will show the unique identifier for each node.
+
+If you specifically want to know the number of worker nodes, you can use the following command:
+
+```bash
+docker node ls --filter role=worker
+```
+
+This filters the output to show only worker nodes.
+
+Additionally, you can view detailed information about the Swarm by running:
+
+```bash
+docker info
+```
+
+Look for the "Swarm" section in the output, which provides information about the current Swarm, including the number of nodes and their status.
+
+Remember that the join token is only used during the initial join process, and afterward, nodes are managed by the Swarm and can be viewed using the `docker node ls` command.
 ## To view the list of active Docker stacks in a Docker Swarm, you can use the following command:
 
 ```bash
