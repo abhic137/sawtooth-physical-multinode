@@ -56,6 +56,29 @@ docker service scale <SERVICE-NAME>=<NUMBER-OF-REPLICAS>
 
 Replace `<SERVICE-NAME>` and `<NUMBER-OF-REPLICAS>` with your service name and the desired number of replicas.
 
+## To view the list of active Docker stacks in a Docker Swarm, you can use the following command:
+
+```bash
+docker stack ls
+```
+
+This command will display a list of active stacks along with their associated services.
+
+If you want to view detailed information about a specific stack, including the services and replicas, you can use the following command:
+
+```bash
+docker stack ps <STACK-NAME>
+```
+
+Replace `<STACK-NAME>` with the name of the stack you are interested in. This command will show the tasks (containers) associated with each service within the specified stack.
+
+For example, if you deployed a stack named "webapp," you can view its details with:
+
+```bash
+docker stack ps webapp
+```
+
+These commands provide an overview of the Docker stacks in your Swarm and their current status.
 ### Additional Tips:
 - Use Docker Compose for defining multi-container applications.
 - Use Swarm Visualizer or Portainer for a graphical representation of your Swarm.
