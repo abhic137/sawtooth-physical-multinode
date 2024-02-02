@@ -27,6 +27,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-intkey-tp-python-default-0
     expose:
       - 4004
@@ -39,6 +41,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-intkey-tp-python-default-1
     expose:
       - 4004
@@ -51,6 +55,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-intkey-tp-python-default-2
     expose:
       - 4004
@@ -63,6 +69,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-intkey-tp-python-default-3
     expose:
       - 4004
@@ -75,6 +83,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-intkey-tp-python-default-4
     expose:
       - 4004
@@ -89,6 +99,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-rest-api-default-0
     expose:
       - 8008
@@ -106,6 +118,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-rest-api-default-1
     expose:
       - 8008
@@ -124,6 +138,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-rest-api-default-2
     expose:
       - 8008
@@ -142,6 +158,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-rest-api-default-3
     expose:
       - 8008
@@ -160,6 +178,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-rest-api-default-4
     expose:
       - 8008
@@ -180,6 +200,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-settings-tp-default-0
     expose:
       - 4004
@@ -193,6 +215,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-settings-tp-default-1
     expose:
       - 4004
@@ -206,6 +230,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-settings-tp-default-2
     expose:
       - 4004
@@ -219,6 +245,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-settings-tp-default-3
     expose:
       - 4004
@@ -232,6 +260,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-settings-tp-default-4
     expose:
       - 4004
@@ -247,6 +277,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-shell-default
     volumes:
       - pbft-shared:/pbft-shared
@@ -266,6 +298,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-validator-default-0
     expose:
       - 4004
@@ -326,6 +360,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-validator-default-1
     expose:
       - 4004
@@ -364,6 +400,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-validator-default-2
     expose:
       - 4004
@@ -403,6 +441,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-validator-default-3
     expose:
       - 4004
@@ -443,6 +483,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-validator-default-4
     expose:
       - 4004
@@ -486,6 +528,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-pbft-engine-default-0
     command: pbft-engine -vv --connect tcp://validator-0:5050
     stop_signal: SIGKILL
@@ -497,6 +541,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-pbft-engine-default-1
     command: pbft-engine -vv --connect tcp://validator-1:5050
     stop_signal: SIGKILL
@@ -508,6 +554,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-pbft-engine-default-2
     command: pbft-engine -vv --connect tcp://validator-2:5050
     stop_signal: SIGKILL
@@ -519,6 +567,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-pbft-engine-default-3
     command: pbft-engine -vv --connect tcp://validator-3:5050
     stop_signal: SIGKILL
@@ -530,6 +580,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-pbft-engine-default-4
     command: pbft-engine -vv --connect tcp://validator-4:5050
     stop_signal: SIGKILL
@@ -543,6 +595,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-xo-tp-python-default-0
     expose:
       - 4004
@@ -556,6 +610,8 @@ services:
       placement:
         constraints:
           - node.hostname == node1
+    networks:
+      - appnet
     container_name: sawtooth-xo-tp-python-default-1
     expose:
       - 4004
@@ -569,6 +625,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-xo-tp-python-default-2
     expose:
       - 4004
@@ -582,6 +640,8 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-xo-tp-python-default-3
     expose:
       - 4004
@@ -595,8 +655,14 @@ services:
       placement:
         constraints:
           - node.hostname == node2
+    networks:
+      - appnet
     container_name: sawtooth-xo-tp-python-default-4
     expose:
       - 4004
     command: xo-tp-python -vv -C tcp://validator-4:4004
     stop_signal: SIGKILL
+
+networks:
+  appnet:
+    driver: overlay
